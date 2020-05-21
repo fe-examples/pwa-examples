@@ -30,3 +30,6 @@ window.addEventListener('beforeinstallprompt', (e) => {
       });
   });
 });
+window.addEventListener('appinstalled', (evt) => {
+  console.log('应用安装');
+});
