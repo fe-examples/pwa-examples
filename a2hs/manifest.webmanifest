@@ -1,6 +1,7 @@
 {
   "background_color": "#000000",
   "theme_color": "#27292d",
+  "description": "这是一段描述",
   "display": "fullscreen",
   "icons": [
     {
