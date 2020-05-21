@@ -3,11 +3,7 @@
   "description": "Shows random fox pictures. Hey, at least it isn't cats.",
   "display": "fullscreen",
   "icons": [
-    {
-      "src": "icon/fox-icon.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    }
+    
   ],
   "name": "gahing 测试",
   "short_name": "test",
