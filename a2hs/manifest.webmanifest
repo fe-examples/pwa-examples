@@ -1,11 +1,15 @@
 {
   "background_color": "purple",
-  "description": "Shows random fox pictures. Hey, at least it isn't cats.",
+  "description": "这是一段描述",
   "display": "fullscreen",
   "icons": [
-    
+    {
+      "src": "icon/fox-icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
   ],
-  "name": "gahing 测试",
-  "short_name": "test",
+  "name": "xx快捷版",
+  "short_name": "快",
   "start_url": "."
 }
