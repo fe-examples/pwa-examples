@@ -1,49 +1,30 @@
-const images = ['fox1','fox2','fox3','fox4'];
-const imgElem = document.querySelector('img');
-
-function randomValueFromArray(array) {
-  let randomNo =  Math.floor(Math.random() * array.length);
-  return array[randomNo];
-}
-
-setInterval(function() {
-  let randomChoice = randomValueFromArray(images);
-  imgElem.src = 'images/' + randomChoice + '.jpg';
-}, 2000)
-
-// Register service worker to control making site work offline
-
-// if('serviceWorker' in navigator) {
-//   navigator.serviceWorker
-//            .register('/pwa-examples/a2hs/sw.js')
-//            .then(function() { console.log('Service Worker Registered'); });
-// }
-
-// Code to handle install prompt on desktop
-
 let deferredPrompt;
+// 默认不展示按钮，仅支持 「Add to Home Screen」 功能才展现
 const addBtn = document.querySelector('.add-button');
 addBtn.style.display = 'none';
 
+// 仅浏览器支持且未安装该应用，以下事件才会触发
 window.addEventListener('beforeinstallprompt', (e) => {
-  // Prevent Chrome 67 and earlier from automatically showing the prompt
+  // Chrome 67 及之前版本，会自动展现安装的 prompt
+  // 为了版本统一及用户体验，我们禁止自动展现 prompt
   e.preventDefault();
-  // Stash the event so it can be triggered later.
+  // 存放事件用于后续触发
   deferredPrompt = e;
-  // Update UI to notify the user they can add to home screen
+  // 展现按钮
   addBtn.style.display = 'block';
 
   addBtn.addEventListener('click', (e) => {
     // hide our user interface that shows our A2HS button
     addBtn.style.display = 'none';
-    // Show the prompt
+    // 展现安装的 prompt
     deferredPrompt.prompt();
-    // Wait for the user to respond to the prompt
+    // 等待用户对 prompt 进行操作
+    // 如果是用户自己在浏览器输入框右侧打开的 prompt ，触发不了以下代码
     deferredPrompt.userChoice.then((choiceResult) => {
         if (choiceResult.outcome === 'accepted') {
-          console.log('User accepted the A2HS prompt');
+          console.log('添加应用');
         } else {
-          console.log('User dismissed the A2HS prompt');
+          console.log('取消添加');
         }
         deferredPrompt = null;
       });
