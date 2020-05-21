@@ -3,6 +3,12 @@ let deferredPrompt;
 const addBtn = document.querySelector('.add-button');
 addBtn.style.display = 'none';
 
+if('serviceWorker' in navigator) {
+  navigator.serviceWorker
+           .register('/pwa-examples/a2hs/sw.js')
+           .then(function() { console.log('Service Worker Registered'); });
+}
+
 // 仅浏览器支持且未安装该应用，以下事件才会触发
 window.addEventListener('beforeinstallprompt', (e) => {
   // Chrome 67 及之前版本，会自动展现安装的 prompt
