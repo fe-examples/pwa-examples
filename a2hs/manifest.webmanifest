@@ -1,5 +1,6 @@
 {
   "background_color": "purple",
+  "description": "Shows random fox pictures. Hey, at least it isn't cats.",
   "display": "fullscreen",
   "icons": [
     {
@@ -8,7 +9,7 @@
       "type": "image/png"
     }
   ],
-  "name": "xx快捷版",
-  "short_name": "快",
-  "start_url": "."
+  "name": "Awesome fox pictures",
+  "short_name": "Foxes",
+  "start_url": "/pwa-examples/a2hs/index.html"
 }
