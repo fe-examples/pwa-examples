@@ -1,3 +1,5 @@
+
+通过 http://fe-examples.github.io/pwa-examples/a2hs/index.html 访问
 # PWA Examples
 
 Examples for progressive web apps.
