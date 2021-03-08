@@ -5,7 +5,7 @@ self.addEventListener('install', async (event) => {
     const preCache = async () => {
         const cache = await caches.open('static-v1');
         return cache.addAll([
-            '/',
+            './',
         ]);
     };
     event.waitUntil(preCache());
