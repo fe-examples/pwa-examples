@@ -18,11 +18,11 @@ self.addEventListener('activate', (event) => {
 self.addEventListener('fetch', event => {
     console.log('service worker 抓取请求成功: ' + event.request.url)
     event.respondWith(
-        caches.match(e.request).then(function (cache) {
-            return cache || fetch(e.request);
+        caches.match(event.request).then(function (cache) {
+            return cache || fetch(event.request);
         }).catch(function (err) {
             console.log(err);
-            return fetch(e.request);
+            return fetch(event.request);
         })
     );
 })
