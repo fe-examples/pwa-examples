@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+  <head>
+    <title>Service Worker Lifecycle Demo</title>
+  </head>
+  <body>
+    <img src="./page/upload.png" alt="demo image" />
+    <script>
+      if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('./sw.js?v=4').catch(console.log)
+      }
+    </script>
+  </body>
+</html>
